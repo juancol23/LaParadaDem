@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="#fffefe"
-    tools:context=".DashboardActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:foregroundGravity="center"
-        android:orientation="horizontal"
-        android:background="#eee">
-
-
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/menu_profile_image"
-            android:layout_margin="15dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:onClick="xxx"
-            android:background="@drawable/logo"
-            app:civ_border_color ="#eee"
-            app:civ_border_width="3dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="#3d3d3d"
-            android:text="¿Donde entreno?"/>
-
-    </LinearLayout>
+    tools:context=".fragments.DondeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
