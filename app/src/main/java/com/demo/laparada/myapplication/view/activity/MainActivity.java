@@ -1,11 +1,9 @@
-package com.demo.laparada.myapplication;
+package com.demo.laparada.myapplication.view.activity;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,11 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.demo.laparada.myapplication.R;
 import com.demo.laparada.myapplication.fragments.DondeFragment;
 import com.demo.laparada.myapplication.fragments.GymFragment;
+import com.demo.laparada.myapplication.view.activity.mapa.MapsActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, GymFragment.OnFragmentInteractionListener {
@@ -106,6 +105,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
+            mapa();
+
 
         } else if (id == R.id.nav_share) {
 
@@ -133,6 +134,10 @@ public class MainActivity extends AppCompatActivity
                 .addToBackStack(null).commit();
     }
 
+    private void mapa(){
+        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+
+    }
     private void setToolbar(String title) {
         // Añadir la Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
