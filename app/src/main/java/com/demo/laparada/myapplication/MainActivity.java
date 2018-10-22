@@ -1,6 +1,7 @@
 package com.demo.laparada.myapplication;
 
 import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,13 +15,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.demo.laparada.myapplication.fragments.DondeFragment;
 import com.demo.laparada.myapplication.fragments.GymFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GymFragment.OnFragmentInteractionListener {
+
+    private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,9 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-  
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
     }
 
@@ -57,6 +63,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
        // getMenuInflater().inflate(R.menu.main, menu);
+        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         ImageView imageView = findViewById(R.id.imageView);
         Glide.with(MainActivity.this)
                 .load(R.drawable.header_cros)
@@ -89,11 +96,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             menu_inicio();
-            setToolbar("nene");
+            setToolbar("¿Donde entreno?");
+            //Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_gallery) {
             menu_gym();
-            setToolbar("nene");
+            setToolbar("Gym Asociados");
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -119,6 +127,7 @@ public class MainActivity extends AppCompatActivity
 
     private void menu_gym() {
         GymFragment inicio = new GymFragment();
+
         getSupportFragmentManager().beginTransaction().replace(R.id.contenido, inicio)
                 .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                 .addToBackStack(null).commit();
@@ -129,12 +138,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
-        toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // openCoins();
-            }
-        });
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -142,4 +146,8 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
