@@ -15,37 +15,165 @@
         android:gravity="center"
         android:foregroundGravity="center"
         android:orientation="horizontal"
-        android:background="#464646">
+        android:background="#eee">
 
-        <ImageView
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/menu_profile_image"
             android:layout_margin="15dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:gravity="center"
             android:onClick="xxx"
-            android:background="@drawable/logo"/>
+            android:background="@drawable/logo"
+            app:civ_border_color ="#eee"
+            app:civ_border_width="3dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#eee"
+            android:textColor="#3d3d3d"
             android:text="¿Donde entreno?"/>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/miraflores"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".4"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="Miraflores"
+                android:layout_marginTop="90dp"
+                android:textColor="#eee"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/san_isidro"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".4"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="San Isidro"
+                android:layout_marginTop="90dp"
+                android:textColor="#eee"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/miraflores"
-            android:scaleType="centerCrop"/>
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/surquillo"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".4"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="Surquillo"
+                android:layout_marginTop="90dp"
+                android:textColor="#eee"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight=".5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/la_molina"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha=".4"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="La Molina"
+                android:layout_marginTop="90dp"
+                android:textColor="#eee"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
 
     </LinearLayout>
-
 
 
 
